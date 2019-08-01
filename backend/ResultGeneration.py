@@ -8,7 +8,6 @@ import sports
 from datetime import datetime
 import re
 
-
 class ResultGen:
     def __init__(self):
         self.result = ""
@@ -57,14 +56,14 @@ class ResultGen:
                 self.gmapskey = keys[1].replace('"', '')
 
     '''
-        Gets translations
+        Gets Directions
         ** params **
         _from - origin point for directions
         _to - destination point for directions
         _mode - One of [driving, walking, bicycling, transit] - how to get there. Default - driving
 
         ** returns **
-        self.result - A list of formatted and display-ready directions, or a list of size-1 with error message.
+        self.result - A list of DirectionsResult, or a list of size-1 with error message.
     '''
 
     def get_directions(self, _from, _to, _mode="driving"):
@@ -79,10 +78,14 @@ class ResultGen:
         try:
             steps = dir_res[0]['legs'][0]['steps']
             for step in steps:
-                rVal.append("In " + step['distance']['text'] + ' after ' + step['duration']['text'] + ' ' + re.sub(
-                    self.regex_to_remove_html, '', step['html_instructions']))
+                dist = step['distance']['text']
+                dur = step['duration']['text']
+                inst = re.sub(self.regex_to_remove_html, '', step['html_instructions'])
+
+                mStep = DirectionsResult(dist=dist, time=dur, inst=inst)
+                rVal.append(mStep)
         except:
-            rVal = [error_str]
+            rVal = [DirectionsResult(err=error_str)]
 
         self.result = rVal
         return self.result
@@ -93,18 +96,49 @@ class ResultGen:
         query - Search query
 
         ** returns **
-        self.result - String of translated text
+        self.result - A list of GoogleResult
+        GoogleResult:
+            self.name # The title of the link
+            self.link # The external link
+            self.google_link # The google link
+            self.description # The description of the link
+            self.thumb # The link to a thumbnail of the website (NOT implemented yet)
+            self.cached # A link to the cached version of the page
+            self.page # What page this result was on (When searching more than one page)
+            self.index # What index on this page it was on
+            self.number_of_results # The total number of results the query returned
     '''
     def get_search_result(self, query):
-        x = google.search(query)
-        for sol in x:
-            print(sol.description)
+        rVal = google.search(query)
 
-        return x[0].description
+        self.result = rVal
+        return rVal
 
+    '''
+        Gets Sports Score Right Now
+        ** params **
+        _type - The name of sport. Look at Sports class to get supported sport types
+        teams - 2-List. teams[0] has home team, teams[1] should have away team
+        
+        ** returns **
+        self.result - A list of GoogleResult
+        GoogleResult:
+            self.name # The title of the link
+            self.link # The external link
+            self.google_link # The google link
+            self.description # The description of the link
+            self.thumb # The link to a thumbnail of the website (NOT implemented yet)
+            self.cached # A link to the cached version of the page
+            self.page # What page this result was on (When searching more than one page)
+            self.index # What index on this page it was on
+            self.number_of_results # The total number of results the query returned
+    '''
     def sub_to_sport(self, _type, teams):
-        matches = sports.get_match(_type, teams[0], teams[1])
-        print(matches.home_score)
+        rVal = sports.get_match(_type, teams[0], teams[1])
+
+        self.result = rVal
+        return self.result
+        print(rVal)
 
     '''
         Test function to understand Gmaps API response
@@ -122,15 +156,35 @@ class ResultGen:
                 'html_instructions'])
 
     '''
-        Returns the result
+        Returns the current result
     '''
     def get_result(self):
         return self.result
 
+class DirectionsResult:
+    def __init__(self, dist=None, time=None, inst=None, err=None):
+        self.distance = dist
+        self.time = time
+        self.instruction = inst
+        self.error = err
+
+class sports:
+    def __init__(self):
+        self.BASEBALL = 'baseball'
+        self.BASKETBALL = 'basketball'
+        self.CRICKET = 'cricket'
+        self.FOOTBALL = 'football'
+        self.HANDBALL = 'handball'
+        self.HOCKEY = 'hockey'
+        self.RUGBY_L = 'rugby-league'
+        self.RUGBY_U = 'rugby-union'
+        self.SOCCER = 'soccer'
+        self.TENNIS = 'tennis'
+        self.VOLLEYBALL = 'volleyball'
 
 x = ResultGen()
 
 # _from = input("what do u wanna translate?")
 # tolang = input("to what lang?")
 
-x.sub_to_sport(sports.CRICKET, ["Australia", "england"])
+x.sub_to_sport(sports.TENNIS, ["federer", "nadal"])
