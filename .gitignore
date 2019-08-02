@@ -1,1 +1,14 @@
 backend/keys.txt
+context/*.iml
+context/.gradle
+context/local.properties
+context/.idea/caches
+context/.idea/libraries
+context/.idea/modules.xml
+context/.idea/workspace.xml
+context/.idea/navEditor.xml
+context/.idea/assetWizardSettings.xml
+context/.DS_Store
+context/build
+context/captures
+context/.externalNativeBuild

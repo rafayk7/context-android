@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Features">
+    <menu android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_directions"
+            android:icon="@drawable/directions_24dp"
+            android:title="@string/feature_directions_title" />
+        <item
+            android:id="@+id/nav_translations"
+            android:icon="@drawable/translate_24dp"
+            android:title="@string/feature_translations_title" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/search_24dp"
+            android:title="@string/feature_search_title" />
+        <item
+                android:id="@+id/nav_webpages"
+                android:icon="@drawable/webpage_24dp"
+                android:title="@string/feature_saveWebPage_title" />
+        <item
+            android:id="@+id/nav_sports"
+            android:icon="@drawable/sports_24dp"
+            android:title="@string/feature_sports_title" />
+    </menu>
+    </item>
+
+
+    <item android:title="Contact">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/contact_24dp"
+                android:title="@string/menu_contact" />
+        </menu>
+    </item>
+
+</menu>

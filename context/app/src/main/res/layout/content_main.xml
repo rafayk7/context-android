@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appTitle"
+        android:text="@string/main_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="@dimen/main_title"
+        android:gravity="center"
+    />
+        <ScrollView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mainScrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/appTitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+        >
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+            >
+                <include layout="@layout/card_feature_info"
+                         android:id="@+id/firstFeature"
+                         android:layout_margin="10dp"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                />
+
+                <include layout="@layout/card_feature_info"
+                         android:id="@+id/secondFeature"
+                         android:layout_margin="10dp"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                />
+
+                <include layout="@layout/card_feature_info"
+                         android:id="@+id/thirdFeature"
+                         android:layout_margin="10dp"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                />
+
+                <include layout="@layout/card_feature_info"
+                         android:id="@+id/fourthFeature"
+                         android:layout_margin="10dp"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                />
+                <include layout="@layout/card_feature_info"
+                         android:id="@+id/fifthFeature"
+                         android:layout_margin="10dp"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                />
+                <include layout="@layout/card_feature_info"
+                         android:id="@+id/sixthFeature"
+                         android:layout_margin="10dp"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                />
+            </LinearLayout>
+
+        </ScrollView>
+</android.support.constraint.ConstraintLayout>
