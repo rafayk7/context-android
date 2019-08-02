@@ -44,3 +44,6 @@ Enter Translations Text             |  OCR |  Translations Result
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](screenshots/translations_screen.png)  |  ![](screenshots/ocr_screen.png) |  ![](screenshots/results_translations.PNG)
 
+# Contributing
+Raise an issue if you see problems with it, have a feature request. Or just fork it, add it and submit a PR :) the code is decently documented, but if you have questions let me know
+
