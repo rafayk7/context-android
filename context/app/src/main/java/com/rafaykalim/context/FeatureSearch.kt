@@ -6,10 +6,13 @@ import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.rafaykalim.context.libraries.JavaUtils
+import com.rafaykalim.context.libraries.KotlinUtils
+import com.rafaykalim.context.libraries.apiComm.SmsComm
 import com.rafaykalim.context.libraries.models.WebPageModel
 
 class FeatureSearch : AppCompatActivity() {
@@ -19,6 +22,7 @@ class FeatureSearch : AppCompatActivity() {
     lateinit var queryText : EditText
 
     lateinit var wpmArray : ArrayList<WebPageModel>
+    lateinit var smsComm : SmsComm
 
     var PERMISSIONS = arrayOf(
         Manifest.permission.INTERNET
@@ -38,11 +42,13 @@ class FeatureSearch : AppCompatActivity() {
             setContentView(R.layout.activity_feature__search)
 
         }
+        smsComm = SmsComm(this)
 
         searchButton = findViewById(R.id.sendSearchButton)
         saveWebPageButton = findViewById(R.id.saveWebPageButton)
         queryText = findViewById(R.id.searchText)
 
+        searchButton.setOnClickListener { search() }
         saveWebPageButton.setOnClickListener {
 
                 JavaUtils.getHtmlWebPage(queryText.text.toString(), JavaUtils.OnLinksInterface {
@@ -51,6 +57,13 @@ class FeatureSearch : AppCompatActivity() {
                 JavaUtils.writeFileOnInternalStorage(this, filename, wpmArray)
             })
         }
+    }
+
+    fun search()
+    {
+        var msg = KotlinUtils().genQueryMsg(queryText.text.toString())
+        smsComm.sendSMS(msg)
+        Log.d("DO", msg)
     }
 
     fun hasPermissions(context: Context, vararg permissions: String): Boolean = permissions.all {

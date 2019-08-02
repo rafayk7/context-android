@@ -7,12 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.rafaykalim.context.libraries.KotlinUtils
+import com.rafaykalim.context.libraries.SharedInfo
 import com.rafaykalim.context.libraries.apiComm.SmsComm
 
 import kotlinx.android.synthetic.main.activity_feature_translations.*
 
 class FeatureTranslations : AppCompatActivity() {
 
+    val sInfo = SharedInfo()
     val OCR_TEXT_CODE = 1
     var textToTranslate = ""
 
@@ -21,7 +24,7 @@ class FeatureTranslations : AppCompatActivity() {
     lateinit var mInput : EditText
     lateinit var sendBtn : Button
 
-    var fromLang = ""
+    var fromLang : String?=null
     var toLang = ""
     var dataToTranslate = ""
 
@@ -44,14 +47,28 @@ class FeatureTranslations : AppCompatActivity() {
         smsComm = SmsComm(this@FeatureTranslations)
 
         if (fromLangSpinner != null) {
-            val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, resources.getStringArray(R.array.languages_arr))
+//            var langList = ArrayList<String>()
+//            for (lang in sInfo.LANGUAGES)
+//            {
+//                var x = lang.capitalize()
+//                langList.add(x)
+//            }
+            val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, sInfo.LANGUAGES)
+            val toArrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, sInfo.LANGUAGES.copyOfRange(1,sInfo.LANGUAGES.size))
+
             fromLangSpinner.adapter = arrayAdapter
-            toLangSpinner.adapter = arrayAdapter
+            toLangSpinner.adapter = toArrayAdapter
 
             fromLangSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    fromLang = parent.getItemAtPosition(position).toString()
-                    Log.d("CHOSEN", fromLang)
+                    if(position == 0)
+                    {
+                        fromLang = null
+                    } else
+                    {
+                        fromLang = parent.getItemAtPosition(position).toString()
+                        Log.d("CHOSEN", fromLang)
+                    }
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -76,8 +93,18 @@ class FeatureTranslations : AppCompatActivity() {
 
     fun getTranslation()
     {
-        dataToTranslate = mInput.text.toString()
-        Log.d("DO", "get translation for ${dataToTranslate} from ${fromLang} to ${toLang}")
+        var msg : String ?
+        if (fromLang.isNullOrEmpty())
+        {
+            msg = KotlinUtils().genTransMsg(toLang, mInput.text.toString())
+        }
+        else
+        {
+            msg = KotlinUtils().genTransMsg(fromLang, toLang, mInput.text.toString())
+        }
+
+        smsComm.sendSMS(msg)
+        Log.d("DO", msg)
         //Make API Call
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -37,9 +37,8 @@ class SmsComm(context: Context)
         ActivityCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
     }
 
-    fun getDirections(_from : String, _to : String, _mode: String, onSuccess: (String) -> Unit, onFail : () -> Unit)
+    fun sendSMS(message : String)
     {
-        val message = KotlinUtils().genDirMsg(_from, _to, _mode)
         smsManager.sendTextMessage(destNumber, null, message, null, null)
     }
 }

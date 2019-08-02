@@ -32,9 +32,10 @@
     <item android:title="Contact">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_contact"
                 android:icon="@drawable/contact_24dp"
-                android:title="@string/menu_contact" />
+                android:title="@string/menu_contact"
+            />
         </menu>
     </item>
 

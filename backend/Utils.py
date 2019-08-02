@@ -5,8 +5,10 @@ class SharedInfo:
         self.TRANSLATION = 2
         self.DIRECTIONS = 3
         self.SPORTS = 4
-        self.delimiterList = ['<', '>', '@', '#', '%', '^', '&', '*', '<<', '>>']
-
+        self.ERROR = 5
+        self.delimiterList = ['<', '>', '@', '#', '%', '^', '&', '*', ';', '/']
+        self.resultInnerDelim = '<>'
+        self.resultOutterDelim = ';'
         self.modes = [
             'driving',
             'walking',
@@ -169,7 +171,9 @@ class Utils:
                 toLang = msgObjs[1]
                 fromText = msgObjs[2]
 
-                rVal.transFrom = self.getLang(fromLang)
+                if fromLang != "null":
+                    rVal.transFrom = self.getLang(fromLang)
+
                 rVal.transTo = self.getLang(toLang)
                 rVal.transText = fromText
             except IndexError:
@@ -206,6 +210,9 @@ class Utils:
 
     def getLang(self, lang):
         return self.sInfo.LANG_CODES[lang.lower()]
+
+    def lang(self, code):
+        return self.sInfo.LANGUAGES[code]
 
 class IncomingMessageStruct:
     def __init__(self, reqType, dirFrom=None, dirTo=None, dirMode=None, transFrom=None, transTo=None, transText=None,sportSport=None, sportHome=None, sportAway=None, googleQuery=None, error=None):

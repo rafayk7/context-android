@@ -11,24 +11,29 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.rafaykalim.context.libraries.KotlinUtils
+import com.rafaykalim.context.libraries.SharedInfo
 import com.rafaykalim.context.libraries.apiComm.SmsComm
 
 import kotlinx.android.synthetic.main.activity_feature_directions.*
 
 class FeatureDirections : AppCompatActivity() {
-
+    val sInfo = SharedInfo()
     val PERMISSION_CODE = 0
+
     lateinit var fromDirections: EditText
     lateinit var toDirections: EditText
+
     lateinit var getDirections : Button
 
     lateinit var carButton : ImageView
     lateinit var busButton : ImageView
     lateinit var walkButton : ImageView
+    lateinit var bikeButton : ImageView
 
     lateinit var smsComm : SmsComm
 
-    var currMode = "Car"
+    var currMode = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +49,20 @@ class FeatureDirections : AppCompatActivity() {
         carButton = findViewById(R.id.carButton)
         busButton = findViewById(R.id.busButton)
         walkButton = findViewById(R.id.walkButton)
+        bikeButton = findViewById(R.id.bikeButton)
 
         carButton.setOnClickListener { onCarClicked() }
         busButton.setOnClickListener { onBusClicked() }
         walkButton.setOnClickListener { onWalkClicked() }
+        bikeButton.setOnClickListener { onBikeClicked() }
 
         getDirections.setOnClickListener { getDirections() }
     }
 
     fun getDirections(){
-        Log.d("DO", "get dirs from ${fromDirections.text} to ${toDirections.text}")
+        var msg = KotlinUtils().genDirMsg(fromDirections.text.toString(), toDirections.text.toString(), currMode)
+        smsComm.sendSMS(msg)
+        Log.d("DO", msg)
     }
 
     fun onCarClicked()
@@ -61,8 +70,9 @@ class FeatureDirections : AppCompatActivity() {
         carButton.setImageResource(R.drawable.car_selected_24dp)
         busButton.setImageResource(R.drawable.bus_24dp)
         walkButton.setImageResource(R.drawable.walk_24dp)
+        bikeButton.setImageResource(R.drawable.bicycle_24dp)
 
-        currMode = "Car"
+        currMode = sInfo.modes.indexOf("driving")
     }
 
     fun onBusClicked()
@@ -70,8 +80,9 @@ class FeatureDirections : AppCompatActivity() {
         carButton.setImageResource(R.drawable.car_24dp)
         busButton.setImageResource(R.drawable.bus_selected_24dp)
         walkButton.setImageResource(R.drawable.walk_24dp)
+        bikeButton.setImageResource(R.drawable.bicycle_24dp)
 
-        currMode = "Bus"
+        currMode = sInfo.modes.indexOf("transit")
     }
 
     fun onWalkClicked()
@@ -79,8 +90,19 @@ class FeatureDirections : AppCompatActivity() {
         carButton.setImageResource(R.drawable.car_24dp)
         busButton.setImageResource(R.drawable.bus_24dp)
         walkButton.setImageResource(R.drawable.walk_selected_24dp)
+        bikeButton.setImageResource(R.drawable.bicycle_24dp)
 
-        currMode = "Walk"
+        currMode = sInfo.modes.indexOf("walking")
+    }
+
+    fun onBikeClicked()
+    {
+        carButton.setImageResource(R.drawable.car_24dp)
+        busButton.setImageResource(R.drawable.bus_24dp)
+        walkButton.setImageResource(R.drawable.walk_24dp)
+        bikeButton.setImageResource(R.drawable.bicycle_selected_24dp)
+
+        currMode = sInfo.modes.indexOf("bicycling")
     }
 
     override fun onRequestPermissionsResult(requestCode: Int,

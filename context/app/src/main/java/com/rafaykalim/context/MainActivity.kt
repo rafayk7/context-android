@@ -1,6 +1,7 @@
 package com.rafaykalim.context
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -9,15 +10,21 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import android.support.v4.widget.DrawerLayout
 import android.support.design.widget.NavigationView
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.CardView
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    val contactsLinksArray = arrayOf("https://www.github.com/rafayk7", "https://linkedin.com/in/rafayk7", "rafay.kalim@mail.utoronto.ca")
+    val contactsTitleArray = arrayOf("Github", "Linkedin", "Email")
+    val contactsImageArray = arrayOf(R.drawable.ic_github, R.drawable.ic_linkedin, R.drawable.ic_mail)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,15 +70,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fourthFeatureCard.findViewById<ImageView>(R.id.featureImg).setImageResource(R.drawable.webpage_24dp)
         fourthFeatureCard.findViewById<TextView>(R.id.featureTitle).text = getText(R.string.feature_saveWebPage_title)
         fourthFeatureCard.findViewById<TextView>(R.id.featureDesc).text = getText(R.string.feature_saveWebPage_desc)
-
+        fourthFeatureCard.setOnClickListener {
+            Toast.makeText(this, "Feature coming soon!", Toast.LENGTH_LONG).show()
+        }
         fifthFeatureCard.findViewById<ImageView>(R.id.featureImg).setImageResource(R.drawable.chatbot_24dp)
         fifthFeatureCard.findViewById<TextView>(R.id.featureTitle).text = getText(R.string.feature_chatbot_title)
         fifthFeatureCard.findViewById<TextView>(R.id.featureDesc).text = getText(R.string.feature_chatbot_desc)
+        fifthFeatureCard.setOnClickListener {
+            Toast.makeText(this, "Feature coming soon!", Toast.LENGTH_LONG).show()
 
+        }
         sixthFeatureCard.findViewById<ImageView>(R.id.featureImg).setImageResource(R.drawable.sports_24dp)
         sixthFeatureCard.findViewById<TextView>(R.id.featureTitle).text = getText(R.string.feature_sports_title)
         sixthFeatureCard.findViewById<TextView>(R.id.featureDesc).text = getText(R.string.feature_sports_desc)
-
+        sixthFeatureCard.setOnClickListener {
+            val intent = Intent(this, FeatureSports::class.java)
+            startActivity(intent)
+        }
         //Nav card
         val toggle = ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -120,21 +135,50 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
             R.id.nav_webpages -> {
-                val intent = Intent(this, ResultWebPageActivity::class.java)
-                startActivity(intent)
+                Toast.makeText(this, "Feature coming soon!", Toast.LENGTH_LONG).show()
             }
             R.id.nav_translations -> {
                 val intent = Intent(this, FeatureTranslations::class.java)
                 startActivity(intent)
             }
             R.id.nav_sports -> {
-
+                val intent = Intent(this, FeatureSports::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_contact -> {
+                val aDialog = AlertDialog.Builder(this)
+                aDialog.setTitle("Choose contact")
+                    .setItems(contactsTitleArray) {dialog, which ->
+                        if (which ==2)
+                        {
+                            sendEmail()
+                        }
+                        else
+                        {
+                            sendBrowser(contactsLinksArray.get(which))
+                        }
+                    }.create().show()
             }
         }
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun sendEmail()
+    {
+        var eIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+            "mailto",contactsLinksArray[2], null))
+        eIntent.putExtra(Intent.EXTRA_SUBJECT, "Contact from Context");
+        eIntent.putExtra(Intent.EXTRA_TEXT, "Hey, just wanted to contact you about...");
+        startActivity(Intent.createChooser(eIntent, "Send email..."));
+    }
+
+    fun sendBrowser(link: String)
+    {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(link));
+        startActivity(browserIntent);
     }
     //Activity list
     // 1. Translations activity - From language, to language, text to translate, camera for OCR, OCR

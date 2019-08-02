@@ -52,6 +52,13 @@
                 />
 
                 <include layout="@layout/card_feature_info"
+                         android:id="@+id/sixthFeature"
+                         android:layout_margin="10dp"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                />
+
+                <include layout="@layout/card_feature_info"
                          android:id="@+id/fourthFeature"
                          android:layout_margin="10dp"
                          android:layout_height="wrap_content"
@@ -63,12 +70,7 @@
                          android:layout_height="wrap_content"
                          android:layout_width="match_parent"
                 />
-                <include layout="@layout/card_feature_info"
-                         android:id="@+id/sixthFeature"
-                         android:layout_margin="10dp"
-                         android:layout_height="wrap_content"
-                         android:layout_width="match_parent"
-                />
+
             </LinearLayout>
 
         </ScrollView>

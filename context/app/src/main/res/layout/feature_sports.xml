@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <TextView
+            android:text="@string/feature_sports_title"
+            android:textSize="@dimen/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/translationsTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
+
+    <LinearLayout android:layout_width="0dp"
+                  app:layout_constraintWidth_percent="0.8"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                  android:orientation="vertical"
+                  android:gravity="center"
+                  android:layout_marginStart="8dp" android:id="@+id/linearLayout">
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+        >
+            <Spinner android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:prompt="@string/translation_prompt"
+                     android:id="@+id/sportChoice"
+            />
+        </LinearLayout>
+
+        <TextView
+                android:text="@string/home_team_string"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:id="@+id/homeTeamText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Text"
+                android:ems="10"
+                android:id="@+id/homeTeam"
+                app:layout_constraintTop_toBottomOf="@+id/fromDirectionsText" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"/>
+        <TextView
+                android:text="vs"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toBottomOf="@id/fromDirections" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"/>
+        <TextView
+                android:text="@string/away_team_string"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:id="@+id/awayTeamText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toBottomOf="@id/fromDirections" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Text"
+                android:ems="10"
+                android:id="@+id/awayTeam"
+                app:layout_constraintTop_toBottomOf="@+id/toDirectionsText"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/toDirections"
+                android:text="@string/sports_btn_text"
+                android:id="@+id/sendSports"
+        />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

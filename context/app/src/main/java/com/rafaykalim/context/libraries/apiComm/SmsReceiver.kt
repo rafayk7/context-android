@@ -7,6 +7,7 @@ import android.util.Log
 import com.rafaykalim.context.OCRActivity
 import com.rafaykalim.context.ResultActivity
 import com.rafaykalim.context.libraries.JavaUtils
+import com.rafaykalim.context.libraries.SharedInfo
 
 class SmsReceiver() : BroadcastReceiver() {
     val SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED"

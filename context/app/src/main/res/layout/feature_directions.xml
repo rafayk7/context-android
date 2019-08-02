@@ -62,6 +62,12 @@
                        android:padding="8dp"
                        android:id="@+id/walkButton"
             />
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/bicycle_24dp"
+                       android:padding="8dp"
+                       android:id="@+id/bikeButton"
+            />
 
         </LinearLayout>
         <TextView
@@ -74,7 +80,7 @@
                 app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"/>
         <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:hint="Text"
@@ -93,7 +99,7 @@
                 app:layout_constraintTop_toBottomOf="@id/fromDirections" android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"/>
         <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:hint="Text"
