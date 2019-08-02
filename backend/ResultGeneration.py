@@ -16,7 +16,7 @@ class ResultGen:
         self.gmapskey = None
         self.regex_to_remove_html = '<[^>]+>'
 
-        self.get_keys()
+        #self.get_keys()
 
     '''
         Gets translations

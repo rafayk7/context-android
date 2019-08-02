@@ -4,7 +4,8 @@
     tools:showIn="navigation_view">
 
     <item android:title="Features">
-    <menu android:checkableBehavior="single">
+    <menu android:checkableBehavior="single"
+    >
         <item
             android:id="@+id/nav_directions"
             android:icon="@drawable/directions_24dp"
