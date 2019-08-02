@@ -6,7 +6,7 @@ resGen = res()
 utils = Utils.Utils()
 
 rVal = ""
-msg = "30bahen center, toronto<lash miller, toronto<1"
+msg = "40cricket<australia<england"
 
 incomingMsgBody = utils.parseIncomingMessage(msg)
 reqType = incomingMsgBody.reqType
