@@ -1,77 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b620544-135f-4fb8-a378-c5f7c7505dd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/FeatureSports.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/SavedPreference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/SharedInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/logo-main-web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/logo_main-web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/logo_main_2-web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/drawable/bicycle_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/drawable/bicycle_selected_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/drawable/ic_github.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/drawable/ic_linkedin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/drawable/ic_mail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/layout/activity_feature_sports.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/layout/feature_sports.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-anydpi-v26/logo_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-anydpi-v26/logo_main_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-anydpi-v26/logo_main_2_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-anydpi-v26/logo_main_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-hdpi/logo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-hdpi/logo_1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-hdpi/logo_main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-hdpi/logo_main_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-hdpi/logo_main_2_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-hdpi/logo_main_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-mdpi/logo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-mdpi/logo_1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-mdpi/logo_main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-mdpi/logo_main_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-mdpi/logo_main_2_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-mdpi/logo_main_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xhdpi/logo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xhdpi/logo_1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xhdpi/logo_main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xhdpi/logo_main_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xhdpi/logo_main_2_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xhdpi/logo_main_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxhdpi/logo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxhdpi/logo_1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxhdpi/logo_main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxhdpi/logo_main_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxhdpi/logo_main_2_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxhdpi/logo_main_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxxhdpi/logo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxxhdpi/logo_1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxxhdpi/logo_main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxxhdpi/logo_main_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxxhdpi/logo_main_2_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/context/app/src/main/res/mipmap-xxxhdpi/logo_main_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/FeatureDirections.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/FeatureDirections.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/FeatureSearch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/FeatureSearch.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/FeatureTranslations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/FeatureTranslations.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/ResultActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/ResultActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/ApiUrl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/ApiUrl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/KotlinUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/KotlinUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/apiComm/SmsComm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/apiComm/SmsComm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/apiComm/SmsReceiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/java/com/rafaykalim/context/libraries/apiComm/SmsReceiver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/res/layout/content_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/res/layout/content_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/res/layout/content_result.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/res/layout/feature_directions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/res/layout/feature_directions.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/context/app/src/main/res/values/strings.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1b620544-135f-4fb8-a378-c5f7c7505dd9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +37,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="-567">
               <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding>
                 <element signature="e#1#13#0" expanded="true" />
@@ -451,7 +381,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="-567">
           <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding>
             <element signature="e#1#13#0" expanded="true" />
