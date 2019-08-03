@@ -2,6 +2,6 @@ googletrans
 googlemaps
 twilio
 flask
-google
+git+https://github.com/abenassi/Google-Search-API
 sports.py
 gunicorn==19.9.0
