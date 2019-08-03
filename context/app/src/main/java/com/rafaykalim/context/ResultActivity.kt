@@ -3,6 +3,7 @@ package com.rafaykalim.context
 import android.os.Bundle
 import android.support.design.widget.AppBarLayout
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -90,10 +91,10 @@ class ResultActivity : AppCompatActivity() {
                 mAppBarLayout.setBackgroundResource(R.drawable.translations_background)
 
                 try {
-                    var fromLangText = titleComponents[0]
-                    var toLangText = titleComponents[1]
-                    var fromStringText = titleComponents[2]
-                    var toStringText = titleComponents[3]
+                    var fromLangText = titleComponents[0].capitalize()
+                    var toLangText = titleComponents[1].capitalize()
+                    var fromStringText = titleComponents[2].capitalize()
+                    var toStringText = titleComponents[3].capitalize()
 
                     var title = "${fromLangText} > ${toLangText} Translation"
 
@@ -119,10 +120,10 @@ class ResultActivity : AppCompatActivity() {
                 mAppBarLayout.setBackgroundResource(R.drawable.sports_background)
 
                 try {
-                    var homeTeam = titleComponents[0]
-                    var awayTeam = titleComponents[1]
-                    var homeScore = titleComponents[2]
-                    var awayScore = titleComponents[3]
+                    var homeTeam = titleComponents[0].capitalize()
+                    var awayTeam = titleComponents[1].capitalize()
+                    var homeScore = titleComponents[2].capitalize()
+                    var awayScore = titleComponents[3].capitalize()
 
                     // Set text here
                     var homeNameView = findViewById<TextView>(R.id.home_team_name)
@@ -142,7 +143,7 @@ class ResultActivity : AppCompatActivity() {
                 toggleVisible(googleLayout)
                 mAppBarLayout.setBackgroundResource(R.drawable.google_background)
 
-                var title = "Google Result for ${titleComponents[0]}"
+                var title = "Google Result for ${titleComponents[0].capitalize()}"
                 var sb = StringBuilder()
                 var i = 1
                 for (result in outerComponents) {
@@ -162,6 +163,11 @@ class ResultActivity : AppCompatActivity() {
 
                 titleView.text = title
                 bodyView.text = sb.toString()
+            }
+            sInfo.ERROR -> {
+                toggleVisible(directionsLayout)
+                var resultTitleView = findViewById<TextView>(R.id.directions_result_title)
+                resultTitleView.text = titleComponents.toString().capitalize()
             }
         }
     }
@@ -202,5 +208,10 @@ class ResultActivity : AppCompatActivity() {
         outerComponents = ArrayList(msg.split(sInfo.resultOutterDelim))
         titleComponents = ArrayList(outerComponents.get(0).split(sInfo.resultInnerDelim))
         outerComponents.removeAt(0)
+
+        Log.d("PRASE", reqType.toString())
+        Log.d("PRASE", outerComponents.toString())
+        Log.d("PRASE", titleComponents.toString())
+
     }
 }

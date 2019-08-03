@@ -4,3 +4,4 @@ twilio
 flask
 google
 sports.py
+gunicorn==19.9.0

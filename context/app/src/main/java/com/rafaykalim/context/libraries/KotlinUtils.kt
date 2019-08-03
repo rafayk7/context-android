@@ -4,7 +4,8 @@ class KotlinUtils {
     var sInfo = SharedInfo()
     fun genDirMsg(from : String, to : String, mode: Int): String
     {
-        var useDelim = getDelim(from, to)
+        // Anything here will do, as long as first element is not an int
+        var useDelim: String? = getDelim(from, to) ?: return "JOKES"
 
         // Message has format [REQ TYPE][DELIM INDEX][FROM][TO][MODE INT]
         var rMsg = "${sInfo.DIRECTIONS}${sInfo.delimiterList.indexOf(useDelim)}" +
@@ -69,7 +70,7 @@ class KotlinUtils {
         }
         return useDelim!!
     }
-    fun getDelim(str1: String, str2: String): String
+    fun getDelim(str1: String, str2: String): String?
     {
         var useDelim : String?=null
 
@@ -88,7 +89,7 @@ class KotlinUtils {
                 break
             }
         }
-        return useDelim!!
+        return useDelim
     }
 
     fun isIn(delim : String, checkMsg : String) : Boolean

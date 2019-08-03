@@ -6,9 +6,13 @@ resGen = res()
 utils = Utils.Utils()
 
 rVal = ""
-msg = "40cricket<australia<england"
+msg = ''
 
-incomingMsgBody = utils.parseIncomingMessage(msg)
+try:
+    incomingMsgBody = utils.parseIncomingMessage(msg)
+except ValueError:
+    incomingMsgBody = Utils.IncomingMessageStruct(reqType=sInfo.ERROR, error="Please use fewer symbols in your query. Take out one of these 9: ['<', '>', '@', '#', '%', '^', '&', '*', ';', '/']")
+
 reqType = incomingMsgBody.reqType
 error = False
 

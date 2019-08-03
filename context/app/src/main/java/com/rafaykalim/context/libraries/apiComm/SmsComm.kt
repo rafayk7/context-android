@@ -39,7 +39,7 @@ class SmsComm(context: Context)
 
     fun sendSMS(message : String)
     {
-        smsManager.sendTextMessage(destNumber, null, message, null, null)
+        smsManager.sendTextMessage(destNumber, null, message.trim(), null, null)
     }
 }
 
