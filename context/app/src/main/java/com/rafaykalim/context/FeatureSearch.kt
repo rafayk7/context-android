@@ -63,7 +63,6 @@ class FeatureSearch : AppCompatActivity() {
     {
         var msg = KotlinUtils().genQueryMsg(queryText.text.toString())
         smsComm.sendSMS(msg)
-        Log.d("DO", msg)
     }
 
     fun hasPermissions(context: Context, vararg permissions: String): Boolean = permissions.all {

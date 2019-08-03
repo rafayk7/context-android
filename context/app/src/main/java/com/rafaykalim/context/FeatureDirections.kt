@@ -62,7 +62,6 @@ class FeatureDirections : AppCompatActivity() {
     fun getDirections(){
         var msg = KotlinUtils().genDirMsg(fromDirections.text.toString(), toDirections.text.toString(), currMode)
         smsComm.sendSMS(msg)
-        Log.d("DO", msg)
     }
 
     fun onCarClicked()

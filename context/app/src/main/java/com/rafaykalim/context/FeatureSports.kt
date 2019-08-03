@@ -37,7 +37,6 @@ class FeatureSports : AppCompatActivity() {
             sportChoice.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     sport = parent.getItemAtPosition(position).toString()
-                    Log.d("CHOSEN", sport)
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -53,6 +52,5 @@ class FeatureSports : AppCompatActivity() {
     {
         var msg = KotlinUtils().genSportsMsg(sport, homeTeam.text.toString(), awayTeam.text.toString())
         smsComm.sendSMS(msg)
-        Log.d("DO", msg)
     }
 }

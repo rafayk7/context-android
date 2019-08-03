@@ -67,7 +67,6 @@ class FeatureTranslations : AppCompatActivity() {
                     } else
                     {
                         fromLang = parent.getItemAtPosition(position).toString()
-                        Log.d("CHOSEN", fromLang)
                     }
                 }
 
@@ -79,7 +78,6 @@ class FeatureTranslations : AppCompatActivity() {
             toLangSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     toLang = parent.getItemAtPosition(position).toString()
-                    Log.d("CHOSEN", toLang)
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -104,7 +102,6 @@ class FeatureTranslations : AppCompatActivity() {
         }
 
         smsComm.sendSMS(msg)
-        Log.d("DO", msg)
         //Make API Call
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

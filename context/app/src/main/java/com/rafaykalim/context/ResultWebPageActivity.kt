@@ -39,10 +39,8 @@ class ResultWebPageActivity : AppCompatActivity() {
         {
             if(x.isFile)
             {
-                x.forEachLine { Log.d("TEST", it); i++}
             }
 
-            Log.d("TEST", i.toString())
             var sb = StringBuilder()
             var line : String?=null;
 

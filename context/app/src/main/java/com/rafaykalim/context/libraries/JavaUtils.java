@@ -37,23 +37,19 @@ public class JavaUtils {
         if (pdus.length == 0) {
             return "" ;
         }
-        Log.d("DO", "a");
         // large message might be broken into many
         SmsMessage[] messages = new SmsMessage[pdus.length];
         StringBuilder sb = new StringBuilder();
-        Log.d("DO", String.valueOf(pdus.length));
         for (int i = 0; i < pdus.length; i++) {
             messages[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
             sb.append(messages[i].getMessageBody());
         }
 
         String sender = messages[0].getOriginatingAddress();
-        Log.d("DO", sender);
         String message = sb.toString();
 
         if(sender.equals(new ApiUrl().getDestNumber()))
         {
-            Log.d("DO", message);
             return message;
         }
         return "";
@@ -265,7 +261,6 @@ public class JavaUtils {
 
             if(element.equals(string))
             {
-                Log.d("TEST", element + " " + string);
                 return true;
             }
         }

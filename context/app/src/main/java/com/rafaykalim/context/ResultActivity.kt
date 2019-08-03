@@ -209,9 +209,5 @@ class ResultActivity : AppCompatActivity() {
         titleComponents = ArrayList(outerComponents.get(0).split(sInfo.resultInnerDelim))
         outerComponents.removeAt(0)
 
-        Log.d("PRASE", reqType.toString())
-        Log.d("PRASE", outerComponents.toString())
-        Log.d("PRASE", titleComponents.toString())
-
     }
 }
