@@ -1,6 +1,8 @@
 ![alt text](screenshots/logo.png)
 
 ## An android travel app aimed at providing internet-free directions, translations, sports updates, web pages and google search results through text
+
+Get more information here : https://context-landing.herokuapp.com
 # Android App
 ### Features
 1. Translations 
