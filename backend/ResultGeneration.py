@@ -8,15 +8,16 @@ import sports
 from Utils import DirectionsResult, TranslationsResult, SportsResult
 from datetime import datetime
 import re
+import os
 
 class ResultGen:
     def __init__(self):
         self.result = ""
         self.translator = None
-        self.gmapskey = None
+        self.gmapskey = os.environ.get('GOOGLE_MAPS_API_KEY',3)
         self.regex_to_remove_html = '<[^>]+>'
 
-        self.get_keys()
+        # self.get_keys()
 
     '''
         Gets translations
